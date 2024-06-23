@@ -8,7 +8,9 @@ class Item(BaseModel):
 
 
 app = FastAPI()
-classifier = pipeline("sentiment-analysis")
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+classifier = pipeline('sentiment-analysis', model=model_name)
+
 
 
 @app.get("/")
